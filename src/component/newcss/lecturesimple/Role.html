@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Accueil</title>
+<link rel="stylesheet" href="../vendors/feather/feather.css">
+<link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+
+<link rel="stylesheet" href="../vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<link rel="stylesheet" href="../css/vertical-layout-light/style.css">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.cs">
+<link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.cs">
+<link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+
+<!-- endinject -->
+<link rel="shortcut icon" href="images/favicon.png" />
+
+<link rel="stylesheet" href="../stylea.css">
+</head>
+<body>
+    <div class="body"  >
+        <div class="row">
+          <div class="col-2 nav ">
+            <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #F3F6FF;">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                      <i class="icon-grid menu-icon"></i>
+                      <span class="menu-title">Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="nav-item lisidebarh">
+                    <a class="nav-link linavbarv" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">UI Elements</span>
+                     
+                    </a>
+                    <div class="collapse" id="ui-basic">
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  
+                  <li class="nav-item lisidebarh">
+                    <a class="nav-link " data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                      <i class="icon-columns menu-icon"></i>
+                      <span class="menu-title">Form elements</span>
+                     
+                    </a>
+                    <div class="collapse" id="form-elements">
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                      <i class="ti-android menu-icon" style="color: #D4DBFF;"></i>
+                      <!-- <i class="mdi mdi-account-off" style="color: #4B49AC;"></i>  -->
+                      <span class="menu-title">Charts</span>
+                     
+                    </a>
+                    <div class="collapse" id="charts">
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                      <i class="icon-grid-2 menu-icon"></i>
+                      <span class="menu-title">Tables</span>
+                     
+                    </a>
+                    <div class="collapse" id="tables">
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+                      <i class="icon-contract menu-icon"></i>
+                      <span class="menu-title">Icons</span>
+                     
+                    </a>
+                    <div class="collapse" id="icons">
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                      <i class="icon-head menu-icon"></i>
+                      <span class="menu-title">User Pages</span>
+                     
+                    </a>
+                    <div class="collapse" id="auth">
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+                      <i class="icon-ban menu-icon"></i>
+                      <span class="menu-title">Error pages</span>
+                     
+                    </a>
+                    <div class="collapse" id="error">
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/documentation/documentation.html">
+                      <i class="icon-paper menu-icon"></i>
+                      <span class="menu-title">Documentation</span>
+                    </a>
+                  </li>
+                </ul>
+      
+              </nav>
+           
+          </div>
+          <div class="col-10 corps" >
+            <div class="row">
+                <div class="col-9 corps1">
+                    <nav class="navbar col-lg-12 col-12 p-0 d-flex flex-row navgauche" >
+                       
+                        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end col-lg-12 p-0 mb-0" style="background-color:#F3F6FF ;">
+                            <ul class="navbar-nav mr-lg-2">
+                                <li class="nav-item nav-search d-none d-lg-block">
+                                  <div class="input-group">
+                                    <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                      <span class="input-group-text" id="search">
+                                        <i class="icon-search"></i>
+                                      </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+                                  </div>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav navbar-nav-right " >
+                               
+                                <!--notification -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                                        <i class="icon-bell mx-0"></i>
+                                        <span class="count"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" id="notification" aria-labelledby="notificationDropdown">
+                                        <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                                        <a class="dropdown-item preview-item">
+                                          <div class="preview-thumbnail">
+                                              <div class="preview-icon bg-success">
+                                              <i class="ti-info-alt mx-0"></i>
+                                              </div>
+                                          </div>
+                                          <div class="preview-item-content">
+                                              <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                                              <p class="font-weight-light small-text mb-0 text-muted">
+                                              Just now
+                                              </p>
+                                          </div>
+                                        </a>
+                                        <a class="dropdown-item preview-item">
+                                          <div class="preview-thumbnail">
+                                              <div class="preview-icon bg-warning">
+                                              <i class="ti-settings mx-0"></i>
+                                              </div>
+                                          </div>
+                                          <div class="preview-item-content">
+                                              <h6 class="preview-subject font-weight-normal">Settings</h6>
+                                              <p class="font-weight-light small-text mb-0 text-muted">
+                                              Private message
+                                              </p>
+                                          </div>
+                                        </a>
+                                        <a class="dropdown-item preview-item">
+                                        <div class="preview-thumbnail">
+                                            <div class="preview-icon bg-info">
+                                            <i class="ti-user mx-0"></i>
+                                            </div>
+                                        </div>
+                                        <div class="preview-item-content">
+                                            <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                                            <p class="font-weight-light small-text mb-0 text-muted">
+                                            2 days ago
+                                            </p>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                </nav>
+                <div class="row">
+                    <div class="col-8"> 
+                        <div class="col-12 stretch-card grid-margin">
+                            <div class="card" style="background-color: #E2E5F4">
+                              <div class="card-body">
+                                <p class="card-title mb-0">Roles utilisateur</p>
+                                <div class="table-responsive">
+                                  <table class="table table-borderless">
+                                   
+                                    <tbody>
+                                      <tr>
+                                        <td class="pl-0">
+                                            <i class="mdi mdi-cash-register"></i>
+                                        </td>
+                                        <td>
+                                           
+
+                                        </td>
+                                        <td class="text-muted">65</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="pl-0">
+                                            <i class="mdi mdi-warehouse"></i>
+                                        </td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">54</span>(3.25%)</p></td>
+                                        <td class="text-muted">51</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="pl-0">
+                                            <i class="mdi mdi-transfer"></i>
+                                        </td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">22</span>(2.22%)</p></td>
+                                        <td class="text-muted">32</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="pl-0">
+                                            <i class="mdi mdi-truck-delivery iconeaffichage"></i>
+                                        </td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">46</span>(3.27%)</p></td>
+                                        <td class="text-muted">15</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="pl-0">
+                                            <i class="mdi mdi-tag"></i>
+                                        </td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">46</span>(3.27%)</p></td>
+                                        <td class="text-muted">15</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="pl-0">
+                                            <i class="mdi mdi-account-cog iconeaffichage"></i>
+                                        </td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">46</span>(3.27%)</p></td>
+                                        <td class="text-muted">15</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="pl-0"> <i class="mdi mdi-receipt iconeaffichage"></i></td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">46</span>(3.27%)</p></td>
+                                        <td class="text-muted">15</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 stretch-card grid-margin">
+                            <div class="card" style="background-color: #E2E5F4">
+                              <div class="card-body">
+                                <p class="card-title mb-0">Type de gestion</p>
+                                <div class="table-responsive">
+                                  <table class="table table-borderless">
+                                   
+                                    <tbody>
+                                      <tr>
+                                        <td class="pl-0">Kentucky</td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">65</span>(2.15%)</p></td>
+                                        <td class="text-muted">65</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="pl-0">Ohio</td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">54</span>(3.25%)</p></td>
+                                        <td class="text-muted">51</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="pl-0">Nevada</td>
+                                        <td><p class="mb-0"><span class="font-weight-bold mr-2">22</span>(2.22%)</p></td>
+                                        <td class="text-muted">32</td>
+                                      </tr>
+                                      
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-4"> 
+                      <div class="col-12 stretch-card grid-margin">
+                        <div class="card" style="background-color: #E2E5F4">
+                          <div class="card-body">
+                            <!-- <p class="card-title mb-0">Type de notification</p> -->
+                            <div class="preview-list" id="notification" aria-labelledby="notificationDropdown">
+                                <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                                <a class="dropdown-item preview-item">
+                                  <div class="preview-thumbnail" >
+                                      <div class="preview-icon " style="background-color: #F3F6FF;">
+                                      <i class="ti-info-alt mx-0" style="color: #4B49AC;"></i>
+                                      </div>
+                                  </div>
+                                  <div class="preview-item-content">
+                                      <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                                      <p class="font-weight-light small-text mb-0 text-muted">
+                                      Just now
+                                      </p>
+                                  </div>
+                                </a>
+                                <a class="dropdown-item preview-item">
+                                  <div class="preview-thumbnail">
+                                    <div class="preview-icon " style="background-color: #F3F6FF;">
+                                        <i class="ti-info-alt mx-0" style="color: #4B49AC;"></i>
+                                    </div>
+                                  </div>
+                                  <div class="preview-item-content">
+                                      <h6 class="preview-subject font-weight-normal">Settings</h6>
+                                      <p class="font-weight-light small-text mb-0 text-muted">
+                                      Private message
+                                      </p>
+                                  </div>
+                                </a>
+                                <a class="dropdown-item preview-item">
+                                <div class="preview-thumbnail">
+                                    <div class="preview-icon " style="background-color: #F3F6FF;">
+                                        <i class="ti-info-alt mx-0" style="color: #4B49AC;"></i>
+                                    </div>
+                                </div>
+                                <div class="preview-item-content">
+                                    <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                                    <p class="font-weight-light small-text mb-0 text-muted">
+                                    2 days ago
+                                    </p>
+                                </div>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="col-3 corps2"  >
+                    <header class="header">
+                        <img src="../image/R.jpeg" alt="User Image" class="imageuser">
+                        <div class="user-info">
+                            <h5 class="user-post">Mertina</h5>
+                            <p class="user-name">admin</p>
+                        </div>
+                        <div class="icon-container">
+                            <i class="ti-power-off text-primary"style="font-size:20px"></i>
+                        </div>
+                    </header>
+                    <!-- <div class="row justify-content-between">
+                        <div class="col-11  ml-3 100vh summer">
+                            <div class="card 100vh">
+                              <div class="card-body 100vh">
+                                <p class="card-title">Notifications</p>
+                                <ul class="icon-data-list">
+                                  <li>
+                                    <div class="d-flex">
+                                      <img src="images/faces/face1.jpg" alt="user">
+                                      <div>
+                                        <p class="text-info mb-1">Isabella Becker</p>
+                                        <p class="mb-0">Sales dashboard have been created</p>
+                                        <small>9:30 am</small>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex">
+                                      <img src="images/faces/face2.jpg" alt="user">
+                                      <div>
+                                        <p class="text-info mb-1">Adam Warren</p>
+                                        <p class="mb-0">You have done a great job #TW111</p>
+                                        <small>10:30 am</small>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="d-flex">
+                                    <img src="images/faces/face3.jpg" alt="user">
+                                   <div>
+                                    <p class="text-info mb-1">Leonard Thornton</p>
+                                    <p class="mb-0">Sales dashboard have been created</p>
+                                    <small>11:30 am</small>
+                                   </div>
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                    </div> -->
+
+                    <div class="row justify-content-between">
+                      <div class="col-11  ml-3 100vh summer">
+                          <div class="card 100vh" style="background-color: #F3F6FF;">
+                            <div class="card-body 100vh" >
+                              <!-- <p class="card-title">Summer</p> -->
+                              <nav role="navigation" class="pt-20 sticky top-0 end-0">
+                                <div class="row">
+                                  <div class="col-10">
+                                      <p class="card-title ajout" style="color: #4B49AC;font-weight: lighter;"> Recherche</p>
+                                  </div>
+
+                                  <div class="col-2">
+                                      <a   class="nav-link" href="index.html"  style="color: #4B49AC;font-weight: lighter;display: block;justify-content: center;">
+                                          <i class="icon-grid menu-icon"></i>
+                                      </a>
+                                  </div>
+                                </div>
+                                <div class="h-full overflow-y-auto ps-4 max-h-[calc(100vh-7.5rem)]" style="overscroll-behavior: contain;background-color: #F3F6FF;">
+                                  <ul class="space-y-2 pb-16">
+                                    <li >
+                                      <a  href="#">
+                                        Overview
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#components">
+                                        Creating and nesting components
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#writing-markup-with-jsx">
+                                        Writing markup with JSX
+                                      </a>
+                                    </li>
+                                    <li class="bg-highlight" style="color: #6C7383;font-weight: lighter; background-color: #E2E5F4;">
+                                      <a  href="#adding-styles" style="color: #6C7383;font-weight: lighter;">
+                                        Adding styles
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#displaying-data">
+                                        Displaying data
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#conditional-rendering">
+                                        Conditional rendering
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#rendering-lists">
+                                        Rendering lists
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#responding-to-events">
+                                        Responding to events
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#updating-the-screen">
+                                        Updating the screen
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#using-hooks">
+                                        Using Hooks
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#sharing-data-between-components">
+                                        Sharing data between components
+                                      </a>
+                                    </li>
+                                    <li >
+                                      <a  href="#next-steps">
+                                        Next Steps
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </nav>
+                              
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+
+</body>
+</html>

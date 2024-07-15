@@ -1,0 +1,231 @@
+@import url("font-ubuntu.css");
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --noire: #000;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --blueclaire:#E6F7FF;
+    --gris:#374151;
+    --textgris:#5E687E;
+    --textnoir:#23272F;
+    --textgris:#404756;
+    --textbleu:#087EA4;
+    /* color div */
+    --divgris:#F6F7F9;
+    --divbleu:#E6F7FF;
+    --divblanc:#FFF;
+    --divviolet: #4B49AC;
+}
+
+.linkvalue a{
+    text-decoration: none;
+    color: inherit;
+    text-align: right;
+    text-align: center;
+    /* border: 1px solid rgb(00, 00, 00); */
+    display: block; 
+    width:100%;
+}
+.linkvalue {
+    /* border: 1px solid rgb(00, 00, 00); */
+    width:70%
+}
+.linkvalue li {
+    /* border: 1px solid rgb(00, 00, 00); */
+    width:100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+
+.activelinknavh{
+    background-color: var(--divviolet);
+    color: var(--white);
+    font-size: 16px;
+    color:  '#6C7383' ;
+}
+.linknavh{
+    margin: 2%;
+    padding: 1%;
+    color:  '#6C7383' ;
+}
+.activenotif{
+    display: block;
+}
+
+/* Media query pour les écrans de moins de 600px */
+@media (max-width: 1300px) {
+    .linkvalue {
+        width: 50%;
+        overflow-x: scroll; 
+        overflow-y: hidden;
+    }
+
+    .linkvalue ul li {
+        width: 100%; /* Affiche un seul élément à la fois */
+    }
+}
+
+
+
+/* Media query pour les écrans de plus de 1024px */
+@media (min-width: 1300px) {
+    .responsive-div {
+        background-color: blue;
+        font-size: 30px;
+    }
+}
+.linknavh:hover{
+    background-color: var(--divgris);
+    font-size: 16px;
+    color: var(--gris);
+}
+.lisidebarh{
+    color: '#6C7383';
+}
+
+.content-popup{
+    background-color: #fefefe;
+    margin: 30% auto;
+    padding: 20px;
+    /* border: 1px solid #888; */
+    width: 30%;
+    /* height: 30%; */
+    box-shadow: inset;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+.close{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.close-popup{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.pagination{
+    position: relative;
+    top:0;
+    left:400px;
+}
+.pagination2{
+    float: right;
+    border: 1px solid rgb(00, 00,00);
+}
+.addService{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    /* margin-left: 500px; */
+    align-items: center;
+    border: 1px solid rgb(00, 00,00);
+   
+}
+
+#updateService{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 300px;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0,5);
+    float: right;
+}
+.close-popup{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    gap: 10px; /* Définit l'espacement entre les boutons */
+}
+/* styles.css */
+.styletexte {
+    font-family: 'Ubuntu', sans-serif;
+    color: #3f3e91;
+  }
+  
+  /* styles.css */
+.texterror {
+    color: red;
+}
+.image-frame {
+   
+    width: 200px; /* Largeur du cadre */
+    height: 200px; /* Hauteur du cadre */
+    border: 2px solid #000; /* Bordure du cadre */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centre le cadre horizontalement */
+}
+
+.image-frame img {
+   
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Permet de remplir le cadre sans déformer l'image */
+}
+.no-border{
+    border-radius: 0;
+}
+.code-input {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    width: 60px;
+    height: 60px;
+}
+
+.navtable{
+    width: 100%;
+    height: 10%;
+    text-decoration: none;
+}
+
+.navtable ul{
+    text-decoration: none;
+}
+.navtable li{
+    text-decoration: none;
+    list-style: none; 
+}
+/* .navLink{
+    border: 1px solid rgb(00, 00,00);
+    font-size: 20px;
+}
+.corp{
+    border: 1px solid rgb(00, 00,00);
+}
+.borderblack{
+    border: 1px solid rgb(00, 00,00);
+}
+.navbar{
+    margin: 0;
+    align-items: center;
+} */
