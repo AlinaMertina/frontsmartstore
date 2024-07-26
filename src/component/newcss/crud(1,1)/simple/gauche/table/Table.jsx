@@ -2,7 +2,7 @@ import React  from 'react';
 import styles from '../../../../../../datajson/style/style';
 import Tr from './tr/Tr';
 import StatiqueFonction from '../../../../../../statiquefonction/Fonction';
-export default function Table({name,modificationValue,data,suivant,precedent,colonne}){
+export default function Table({name,modificationValue,data,suivant,precedent,colonne,detaille}){
         const cellStyle = {
             float: 'right'
             };
@@ -24,11 +24,13 @@ export default function Table({name,modificationValue,data,suivant,precedent,col
                                         <th style={styles.titreViollete}>{ StatiqueFonction.capitalizeFirstLetter(value)} </th>
                                     ))}
                                     <th style={styles.titreViollete}>Modification </th>
+                                    <th style={styles.titreViollete}>{detaille.nom} </th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 {data && data.map((value,index)=>(
-                                    <Tr key={index} data={value} modificationValue={modificationValue} colonne={colonne}></Tr>
+                                    <Tr key={index} data={value} modificationValue={modificationValue} colonne={colonne} detaille={detaille}></Tr>
                                 ))
                                 }
                             </tbody>

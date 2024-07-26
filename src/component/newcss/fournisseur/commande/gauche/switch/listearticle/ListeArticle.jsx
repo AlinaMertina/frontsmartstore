@@ -9,7 +9,7 @@ export default function ListeArticle({data,modificationValue,choixElementGaucheP
                     <div class="card-body" >
                     <div class="row">
                         <div class="col-11">
-                            <h4 class="card-title titre"  style={styles.titreViollete}  >Prix Article par Fournisseur  </h4>
+                            <h4 class="card-title titre"  style={styles.titreViollete}  >Prix article par fournisseur  </h4>
                         </div>
                         <div class="col-1">
                             <a   class="nav-link" onClick={choixElementGauchePF} style={styles.titreViollete}>

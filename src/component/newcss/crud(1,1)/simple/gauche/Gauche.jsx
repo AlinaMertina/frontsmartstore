@@ -2,7 +2,7 @@ import React  from 'react';
 import Header from './header/Header';
 import Table from './table/Table';
 export default function Gauche({mot,handlerRechercheSimple,SubmitRechercheSimple,choixElementDroit,
-    name,modificationValue,data,suivant,precedent,colonne}){
+    name,modificationValue,data,suivant,precedent,colonne,detaille}){
     return(
         <>
             <div class="col-9 corps1">
@@ -19,6 +19,7 @@ export default function Gauche({mot,handlerRechercheSimple,SubmitRechercheSimple
                    suivant={suivant}
                    precedent={precedent}
                    colonne={colonne}
+                   detaille={detaille}
                 ></Table>
             </div>
         </>

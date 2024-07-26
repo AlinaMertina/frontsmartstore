@@ -62,7 +62,7 @@ export default function Modification({index,data,
                         </div>
                         <div class="form-group">
                             <label for="exampleSelectGender" style={styles.titreGris}>Quantitee</label>
-                            <input  class="typeahead" type="text" placeholder={data.qt}  name='qt' onChange={handleChange} />
+                            <input  class="typeahead" type="text" value={data.qt}  name='qt' onChange={handleChange} />
                         </div>
                         <button type="submit" class="btn btn-inverse-primary btn-fw"><i className='mdi mdi-check'></i></button>
                         &nbsp;&nbsp;

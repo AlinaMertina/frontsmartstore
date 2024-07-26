@@ -27,7 +27,7 @@ export default function DetailleCommande({data,dataFixeDate,dataAnulation,choixE
                                 <th style={styles.titreViollete} >Unitee</th> 
                                 <th style={styles.titreViollete} >Prix unitaire</th> 
                                 <th style={styles.titreViollete} >Commande</th>
-                                <th style={styles.titreViollete} >Nom utilisateur</th>
+                                <th style={styles.titreViollete} >Prix total</th>
                                 <th style={styles.titreViollete} >Date livraison</th>
                                 <th style={styles.titreViollete} >Annulation</th>
                             </tr>

@@ -3,10 +3,10 @@ import config from '../../../../config/config';
 import axios from 'axios';
 import Gauche from './gauche/Gauche';
 import Droit from './droit/Droit';
-export default function CRUDsimple({name,lien,formaData,colonne}){
+export default function CRUDsimple({name,lien,formaData,colonne,detaille}){
     //declaration variable 
     const size=6;
-    const [choix, setChoix] = useState(1);
+    const [choix, setChoix] = useState(3);
     const [mot, setMot] = useState('null');
     const [data, setData] = useState([]);
     const [updata, setUpdata] = useState(null);
@@ -110,6 +110,7 @@ export default function CRUDsimple({name,lien,formaData,colonne}){
                        suivant={suivant}
                        precedent={precedent}
                        colonne={colonne}
+                       detaille={detaille}
                     ></Gauche>
                   <Droit 
                   choix={choix} setChoix={setChoix} lien={lien} choixElementDroitPF={choixElementDroitPF}

@@ -21,21 +21,6 @@ import { useParams } from 'react-router-dom';
 
 import CRUDutilisateur from '../../../component/newcss/crudutilisateur/CRUDutilisateur';
 
-
-{/* <link rel="stylesheet" href="../vendors/feather/feather.css">
-<link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css">
-<link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
-
-<link rel="stylesheet" href="../vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-<link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css">
-<link rel="stylesheet" type="text/css" href="js/select.dataTables.min.css">
-<!-- End plugin css for this page -->
-<!-- inject:css -->
-<link rel="stylesheet" href="../css/vertical-layout-light/style.css">
-<link rel="stylesheet" href="../css/styles.css">
-<link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.cs">
-<link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.cs"></link> */}
-
 export default function NewCRUDutilisateur(){
     const { id } = useParams();
     return(
@@ -43,7 +28,7 @@ export default function NewCRUDutilisateur(){
          <div class="body"  >
          <div class="row">
                 <div class="col-2 nav ">
-                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin.navverticale.Article}></SidebarVerticale>
+                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin}></SidebarVerticale>
                 </div>
                 <CRUDutilisateur idrole={id}></CRUDutilisateur>
             </div>

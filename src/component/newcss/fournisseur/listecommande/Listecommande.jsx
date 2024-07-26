@@ -3,21 +3,23 @@ import config from '../../../../config/config';
 import axios from 'axios';
 import Gauche from './gauche/Gauche';
 import Droit from './droit/Droit';
-export default function Listecommande(){
+import { event } from '@tauri-apps/api';
+export default function Listecommande({idboncommande}){
+   
     //declaration variable
     const size=6;
     const [listecommande, setListecommande] = useState([]);
     const [detaillecommande, setDetaillecommande] = useState([]);
     const [upData,setUpData]=useState(null);
     const [choixDroit, setChoixDroit] = useState(2);
-    const [choixGauche, setChoixGauche] = useState(1);
+    const [choixGauche, setChoixGauche] = useState(idboncommande!="null" ? 2 : 1);
     const [dateBetween, setDateBetween] = useState({
         date1:'null',
         date2:'null',
     });
     const [debut, setDebut] = useState(0);
-    const [idcommandedetaille, setIdcommandedetaille] = useState(null);
-
+    const [idcommandedetaille, setIdcommandedetaille] = useState(idboncommande!="null" ?  idboncommande: null);
+   
     //fin declaration variable
     //fonction
     
@@ -73,6 +75,27 @@ export default function Listecommande(){
           console.log(error);
         });
     };
+
+
+    const getDetaille= async (idcommande) => {
+      setChoixGauche(2);
+      setIdcommandedetaille(idcommande);
+      var lienvalue = config.lienCrudmetier+`v_commande_frns_detailles/detaille/${idcommande}`;
+      axios.get(lienvalue)
+      .then(response => {
+        const responseData = response.data;
+        if(responseData.data!=null){
+          setDetaillecommande(responseData.data);
+          console.log(responseData.data);
+        }else{
+          console.log(responseData.error);
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
     const getlisteCommande= async () => {
         var lienvalue = config.lienCrudmetier+`v_nbr_commmandes/recherche/${debut}/${size}/null/null`;
         axios.get(lienvalue)
@@ -148,10 +171,16 @@ export default function Listecommande(){
           console.log(error);
         });
     };
+    
     //fin fonction
     useEffect( () => {
         getlisteCommande();
-    }, []);
+        // voirDetaille(event,idboncommande);
+        if(idboncommande!="null"){
+          getDetaille(idboncommande);
+        }
+        console.log("valueueue");
+    }, [idboncommande]);
     return(
         <>
             <div class="col-10 corps" >
@@ -187,3 +216,5 @@ export default function Listecommande(){
 
 
 }
+
+

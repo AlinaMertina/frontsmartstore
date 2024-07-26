@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import logo from './datajson/statique/logo';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import CRUDSimple from './component/crudsimple/CRUDSimple';
-// import CRUDutilisateur from './page/admin/utilisateur/CRUDutilisateur';
+import CRUDutilisateur from './page/admin/utilisateur/CRUDutilisateur';
 // import Unitees from './page/admin/article/crud/Unitees';
 import Famille_article from './page/admin/article/newcrud/Famille_article'
 // import Tva from './page/admin/article/crud/tva/Tva';
@@ -44,28 +44,43 @@ import PrixArticle from './page/admin/article/newcrud/PrixArticle';
 import EtatArticle from './page/admin/article/newcrud/EtatArticle';
 import Fournisseur from './page/admin/fournisseur/crud/Fournisseur';
 import PrixArticlefrns from './page/admin/fournisseur/crud/PrixArticle';
-import Commande from './page/admin/fournisseur/crud/Commande';
+
+// import Commande from './page/admin/fournisseur/crud/Commande';
+// import Commande from './page/approvisionnement/fournisseur/crud/Commande';
+
 import Listecommande from './page/admin/fournisseur/commande/Listecommande';
 import Paiement from './page/admin/fournisseur/paiement/Paiement';
+import Magasin from './page/admin/stock/crud/Magasin';
+
+//import approvisionnement stock
+import Accueilap from './page/approvisionnement/Accueil';
+import Fournisseurap from './page/approvisionnement/fournisseur/crud/Fournisseur';
+import PrixArticlefrnsap from './page/approvisionnement/fournisseur/crud/PrixArticle';
+import Commande from './page/approvisionnement/fournisseur/commande/Commande';
+import Listecommandeap from './page/approvisionnement/fournisseur/commande/Listecommande';
+
+
+//configu
+import SoketNotif from './page/SoketNotif';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>
   <Router>
+    <SoketNotif></SoketNotif>
     <Routes>
     
     <Route path="/" element={<Login></Login>} />
-
-
+    {/* admin */}
+    {/* stock */}
+    <Route path="/magasin" element={<Magasin/>} />
     {/* accuiel */}
     <Route path="/accuieladmin" element={<Accueil/>} />
-
     {/* fournisseur */}
     <Route path="/fournisseurs" element={<Fournisseur></Fournisseur>} />
-    <Route path="/commande" element={<Commande></Commande>} />
     <Route path="/prixarticlefrns/:id" element={<PrixArticlefrns></PrixArticlefrns>} />
-    <Route path="/listecommande" element={<Listecommande></Listecommande>} />
+    <Route path="/listecommande/:id" element={<Listecommande></Listecommande>} />
     <Route path="/paiement" element={<Paiement></Paiement>} />
 
     {/* client */}
@@ -83,17 +98,23 @@ root.render(
       <Route path="/articles" element={<Article></Article>} />
       <Route path="/articleprix/:id" element={<PrixArticle/>} />
 
-
-
-      
       {/* parametrage */}
       <Route path="/lecturesimple" element={<Parametrage/>} />
 
       {/* utilisateur */}
       <Route path="/utilisateurs/:id" element={<NewCRUDutilisateur/>} />
       <Route path="/utilisateurs" element={<NewCRUDutilisateur/>} />
+      {/* <Route path="/utilisateurs" element={<CRUDutilisateur/>} /> */}
 
 
+      {/* compte approvisionnement de stock */}
+      
+      <Route path="/approvisonnementstock" element={<Accueilap/>} />
+      {/* fournisseur */}
+      <Route path="/fournisseursap" element={<Fournisseurap></Fournisseurap>} />
+      <Route path="/prixarticlefrnsap/:id" element={<PrixArticlefrnsap></PrixArticlefrnsap>} />
+      <Route path="/commandeap" element={<Commande></Commande>} />
+      <Route path="/listecommandeap/:id" element={<Listecommandeap></Listecommandeap>} />
     </Routes>
   </Router>
 );

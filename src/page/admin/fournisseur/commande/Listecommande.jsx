@@ -16,17 +16,19 @@ import notification from '../../../../datajson/dynamique/notification';
 import infouser from '../../../../datajson/dynamique/infouser';
 import Commandex from '../../../../component/newcss/fournisseur/commande/Commande';
 import logo from '../../../../datajson/statique/logo';
-import ListeCommandex from '../../../../component/newcss/fournisseur/listecommande/Listecommande';
+import ListeCommandex from '../../../../component/newcss/fournisseur/listecommandeadmin/Listecommande';
+import { useParams } from 'react-router-dom';
 
 export default function Listecommande(){
+    const { id } = useParams();
     return(
         <>
          <div class="body"  >
          <div class="row">
                 <div class="col-2 nav ">
-                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin.navverticale.Article}></SidebarVerticale>
+                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin}></SidebarVerticale>
                 </div>
-                <ListeCommandex></ListeCommandex>
+                <ListeCommandex idboncommande={id}></ListeCommandex>
             </div>
          </div>
            

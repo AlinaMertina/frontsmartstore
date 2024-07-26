@@ -20,18 +20,23 @@ import logo from '../../../../datajson/statique/logo';
 export default function Fournisseur(){
     const formaData={code:'',nom:''};
     const colonne=['code','nom'];
+    const detaille={
+        nom:'Liste article',
+        lien:'/prixarticlefrns/'
+    }
     return(
         <>
          <div class="body"  >
          <div class="row">
                 <div class="col-2 nav ">
-                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin.navverticale.Article}></SidebarVerticale>
+                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin}></SidebarVerticale>
                 </div>
                 <CRUDsimple lien={'fournisseurs'} name={'Fournisseurs'} formaData={formaData}
-                    colonne={colonne} ></CRUDsimple>
+                    colonne={colonne} detaille={detaille} ></CRUDsimple>
             </div>
          </div>
            
         </>
     );
 }
+

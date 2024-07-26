@@ -27,8 +27,7 @@ export default function Tr({data,modificationValue,index}){
                 <td>{data.designation}</td>
                 <td>{data.nomunitee}</td>
                 <td>
-                    
-                        <input style={styles.backgroundColorGauche} type="text" className="form-control" id="exampleInputUsername2" placeholder={data.pu ==null  ? null: data.pu} onChange={updateValue} name='pu' />
+                    <input style={styles.backgroundColorGauche} type="text" className="form-control" id="exampleInputUsername2" placeholder={data.pu ==null  ? null: data.pu} onChange={updateValue} name='pu' />
                     
                 </td>
             </tr>

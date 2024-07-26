@@ -7,7 +7,7 @@ export default function Annulationcommande({data,reloadeDetaille,choixElementDro
     const { id } = user;
     const submit = (e) => {
         e.preventDefault();
-        data.idetat=3;
+        data.idetat=5;
         data.idutilisateur=id;
         data.date=new Date().toISOString();
         console.log(data);
@@ -41,15 +41,12 @@ export default function Annulationcommande({data,reloadeDetaille,choixElementDro
                         </div>
                     </div>
                     <form onSubmit={submit} class="forms-sample">
-                        <p style={{color:'red'}}>Si vous annulez cette commande, vous ne pourrez plus faire 
-                        quoi que ce soit d'autre que 
-                        de refaire une autre commande. 
-                        Êtes-vous sûr de vouloir faire cela ?
+                        <p style={{color:'red'}}>Si vous annulez cette commande, c'est qu'il y a un problème chez le fournisseur.
                         </p>
                         <button type="submit" class="btn btn-inverse-primary btn-fw"><i className='mdi mdi-check'></i></button>
                         &nbsp;&nbsp;
                         <button type="button" class="btn btn-inverse-secondary btn-fw" onClick={reload}><i className='mdi mdi-autorenew'></i></button>
-                        </form>
+                    </form>
                     </div>
                 </div>
                 </div>

@@ -42,7 +42,7 @@ export default function Parametrage(){
          <div class="body"  >
          <div class="row">
                 <div class="col-2 nav ">
-                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin.navverticale.Article}></SidebarVerticale>
+                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin}></SidebarVerticale>
                 </div>
                 <Lecturesimple></Lecturesimple>
             </div>

@@ -1,13 +1,19 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+import rollupNodePolyfills from 'rollup-plugin-node-polyfills';
+
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
   plugins: [react()],
-
-  // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
-  //
-  // 1. prevent vite from obscuring rust errors
+  define: {
+    global: 'window',  // Assigner `global` à `window` pour éviter `undefined`
+  },
+  resolve: {
+    alias: {
+      // Ajouter d'autres alias si nécessaire
+    },
+  },
   clearScreen: false,
   // 2. tauri expects a fixed port, fail if that port is not available
   server: {
@@ -19,3 +25,4 @@ export default defineConfig(async () => ({
     },
   },
 }));
+

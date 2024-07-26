@@ -3,7 +3,7 @@ import Tr from './tr/Tr';
 import axios from 'axios';
 import config from '../../../../../../config/config';
 import styles from '../../../../../../datajson/style/style';
-export default function Table({data,setData,nomfournisseur,choixElementGauchePF}){
+export default function Table({data,setData,nomfournisseur,choixElementGauchePF,setChoixGauche,getData}){
     const updateValue = (index, newValue) => {
         const updatedValues = data.map((item, idx) =>
         idx === index ? newValue : item
@@ -19,7 +19,9 @@ export default function Table({data,setData,nomfournisseur,choixElementGauchePF}
             const responseData = response.data;
             console.log(responseData);
             if(responseData.data=='ok'){
-                // window.location.reload();
+                // getData();
+                
+                setChoixGauche(1);
             // reInitialisationVu(0,size);
             }else{
             // setError('Duplication de nom ou  probleme serveur ')

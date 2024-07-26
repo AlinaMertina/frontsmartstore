@@ -18,16 +18,16 @@ import infouser from '../../datajson/dynamique/infouser';
 export default function Accueil(){
     
     return(
-        <div class="container-scroller">
-            <SidebarHorizontale datalogo={logo.admin} dataUlHorizontal={dataNavbar.admin.navhorizontale} datanotification={notification} infouser={infouser.image} name={'Article'}></SidebarHorizontale>
-            <div class="container-fluid page-body-wrapper">
-                <SidebarVerticale dataMenuVerticale={dataNavbar.admin.navverticale.Article}></SidebarVerticale>
-                <div class="main-panel">
-                    <div class="content-wrapper">
-                        
-                    </div>
+        <>
+         <div class="body"  >
+         <div class="row">
+                <div class="col-2 nav ">
+                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin}></SidebarVerticale>
                 </div>
+               
             </div>
-        </div>
+         </div>
+           
+        </>
     );
 }

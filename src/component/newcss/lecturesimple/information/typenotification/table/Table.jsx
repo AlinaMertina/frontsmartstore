@@ -8,8 +8,6 @@ export default function Table({data}){
         <>
        
            <div class="preview-list overflow-auto" id="notification" aria-labelledby="notificationDropdown" style={{ overflowY: 'scroll', height: '90%',overflowX:'none' }}>
-                
-                  
                     {data && data.map((value,index)=>(
                             <Tr key={index} data={value}></Tr>
                             ))

@@ -1,9 +1,10 @@
 import React, { useEffect, useRef,useState }  from 'react';
 import styles from '../../../../../../../datajson/style/style';
 import StatiqueFonction from '../../../../../../../statiquefonction/Fonction';
+import { Link } from 'react-router-dom';
 
 
-export default function Tr({data,modificationValue,colonne}){
+export default function Tr({data,modificationValue,colonne,detaille}){
     return(
         <>
             <tr style={data.active ==1 ? styles.backgroundColorDroit : styles.backgroundColorGauche }>
@@ -19,6 +20,19 @@ export default function Tr({data,modificationValue,colonne}){
                         <i className="mdi mdi mdi-lock"></i> 
                     </button>
                 </td>
+                {detaille && detaille.lien!=null ? (
+                    <Link to={detaille.lien+data.id}>
+                        <td  style={styles.titreGris}>
+                            <button type="button" className="btn btn-inverse-primary btn-fw" onClick={()=>{modificationValue(data)}}> 
+                                <i className="mdi mdi-format-list-bulleted"></i> 
+                            </button>
+                        </td>
+                    </Link>
+                    
+                )
+                : null
+                   
+                }
             </tr>
         </>
     );

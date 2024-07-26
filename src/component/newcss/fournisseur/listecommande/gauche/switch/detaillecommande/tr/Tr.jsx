@@ -31,9 +31,9 @@ export default function Tr({data,dataFixeDate,dataAnulation}){
                 <td style={styles.titreGris} >{data.nomarticle}</td>
                 <td style={styles.titreGris} >{data.designation}</td>
                 <td style={styles.titreGris} >{data.nomunitee}</td>
-                <td style={styles.titreGris} >{data.pu}</td>
-                <td style={styles.titreGris} >{data.qt}</td>
-                <td style={styles.titreGris} >{data.nomutilisateur}</td>
+                <td style={styles.titreGris} >{StatiqueFonction.formatNumber(data.pu)}</td>
+                <td style={styles.titreGris} >{StatiqueFonction.formatNumber(data.qt) }</td>
+                <td style={styles.titreGris} >{StatiqueFonction.formatNumber(data.ptt)}</td>
                 {id!=3 ? (
                     <>
                     <td style={styles.titreGris} >

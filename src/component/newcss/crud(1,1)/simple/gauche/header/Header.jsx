@@ -4,6 +4,8 @@ import config from '../../../../../../config/config';
 import axios from 'axios';
 export default function Header({mot,
                     handlerRechercheSimple,SubmitRechercheSimple,choixElementDroit}){
+                    
+    const notification = JSON.parse(localStorage.getItem('notification')) || {};
 
     return(
         <>
@@ -26,7 +28,7 @@ export default function Header({mot,
                         <li class="nav-item dropdown">
                             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown" onClick={()=>{choixElementDroit(1)}}>
                                 <i class="icon-bell mx-0"></i>
-                                <span class="count"></span>
+                                <span class="count" style={notification=='null' ? null:  {backgroundColor:'#DD2D4A'}}></span>
                             </a>
                         </li>
                     </ul>

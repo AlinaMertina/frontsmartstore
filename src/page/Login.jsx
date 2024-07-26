@@ -6,6 +6,7 @@ import '../asset/css/css/vertical-layout-light/login.css';
 import logo from '../asset/image/384b36bd149e162eecf22fb27dbb5bc6.jpg'
 import { useNavigate } from 'react-router-dom';
 import styles from '../datajson/style/style';
+
 export default function Login(){
     const [formData, setFormData] = useState({
         login: '',
@@ -31,8 +32,12 @@ export default function Login(){
             //atao par apport a le idrole
             if(responseData.data.idrole!=null &&  responseData.data.idrole=='ROL0001'){
                 navigate('/accuieladmin');
+                localStorage.setItem('liennotif',  JSON.stringify('/admin/notifications') );
             }
-           
+            else if(responseData.data.idrole!=null &&  responseData.data.idrole=='ROL0008'){
+                localStorage.setItem('liennotif',  JSON.stringify('/appr/notifications') );
+                navigate('/approvisonnementstock');
+            }
           }else{
             setErroruplaod({ ...erroruplaod, value: "Identificartion incorrecte", color: 'red' });
           }

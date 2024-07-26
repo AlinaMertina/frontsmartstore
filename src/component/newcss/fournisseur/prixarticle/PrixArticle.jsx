@@ -3,17 +3,19 @@ import config from '../../../../config/config';
 import axios from 'axios';
 import Gauche from './gauche/Gauche';
 import Droit from './droit/Droit';
+import { event } from '@tauri-apps/api';
+// import { event } from '@tauri-apps/api';
 
-export default function GroupeArticle({idfournisseur}){
+export default function PrixArticle({idfournisseur}){
     //declaration variable
     const [data, setData] = useState([]);
+    const [idfournisseur1, setIdfournisseur] = useState(idfournisseur);
     const [updata, setupData] = useState(null);
+    const [listefournisseur, setListefournisseur] = useState([]);
     const [listeupdata, setListeupData] = useState([]);
-
     const [listeArticle, setListeArticle] = useState([]);
     const [infoFournisseur, setInfoFournisseur] = useState([]);
-
-    const [choixDroit, setChoixDroit] = useState(1);
+    const [choixDroit, setChoixDroit] = useState(4);
     const [choixGauche, setChoixGauche] = useState(1);
     const [idArticle, setIdArticle] = useState({
         label:'',
@@ -22,23 +24,45 @@ export default function GroupeArticle({idfournisseur}){
     
     //fin declaration variable
     //foction
+    const getListefournisseur= async () => {
+      var lienvalue = config.lienCrudmetier+`fournisseurs`;
+      console.log(lienvalue);
+      axios.get(lienvalue)
+      .then(response => {
+        const responseData = response.data;
+        if(responseData.data!=null){
+          setListefournisseur(responseData.data);
+          console.log(responseData.data);
+        }else{
+          console.log(responseData.error);
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  const submitFournisseur=async (e) => {
+    e.preventDefault();
+    getData();
+  };
     const getData= async () => {
-        var lienvalue = config.lienCrudmetier+`fournisseur_articles/ajout/null/${idfournisseur}`;
-        console.log(lienvalue);
-        axios.get(lienvalue)
-        .then(response => {
-          const responseData = response.data;
-          if(responseData.data!=null){
-            setData(responseData.data[0]);
-            setInfoFournisseur(responseData.data[1]);
-            console.log(responseData.data);
-          }else{
-            console.log(responseData.error);
-          }
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      var lienvalue = config.lienCrudmetier+`fournisseur_articles/ajout/null/${idfournisseur1}`;
+      console.log(lienvalue);
+      axios.get(lienvalue)
+      .then(response => {
+        const responseData = response.data;
+        if(responseData.data!=null){
+          setData(responseData.data[0]);
+          setInfoFournisseur(responseData.data[1]);
+          console.log(responseData.data);
+        }else{
+          console.log(responseData.error);
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
     };
     const getlisteArticle= async () => {
         var lienvalue = config.lienCrudmetier+`articles/active`;
@@ -58,7 +82,7 @@ export default function GroupeArticle({idfournisseur}){
         });
     };
     const getModification= async (article) => {
-        var lienvalue = config.lienCrudmetier+`fournisseur_articles/ajout/${article.value}/${idfournisseur}`;
+        var lienvalue = config.lienCrudmetier+`fournisseur_articles/ajout/${article.value}/${idfournisseur1}`;
         console.log('valuation')
         console.log(article)
         console.log(lienvalue)
@@ -80,16 +104,18 @@ export default function GroupeArticle({idfournisseur}){
     
     const setChoixGaucheData= async (index) => {
         if(index==1){
-            getData();
+          setChoixGauche(1);
+          getData();
         }
      };
      const setIdselectArticle= async (article) => {
         setIdArticle(article);
         getModification(article);
+        setChoixGauche(2);
      };
 
     const choixDroitPF= async () => {
-        setChoixDroit(1);
+        setChoixDroit(choixDroit==2 ? 4:2 );
      };
      const choixElementGauchePF= async () => {
         if(choixGauche==2){
@@ -116,6 +142,7 @@ export default function GroupeArticle({idfournisseur}){
     useEffect( () => {
         getData();
         getlisteArticle();
+        getListefournisseur();
     }, []);
     return(
         <>
@@ -130,19 +157,26 @@ export default function GroupeArticle({idfournisseur}){
                        setUpdata={setListeupData}
                        choixGauche={choixGauche}
                        choixElementDroit={choixElementDroit}
-                       nomfournisseur={` ${infoFournisseur==null?  null:infoFournisseur.code}  ${infoFournisseur==null?  null:infoFournisseur.nom}`}
+                      //  nomfournisseur={` ${infoFournisseur==null?  null:infoFournisseur.code}  ${infoFournisseur==null?  null:infoFournisseur.nom}`}
+                       nomfournisseur={` ${infoFournisseur==null?  null:infoFournisseur.code} `}
+                       getData={getData}
+                       setChoixGauche={setChoixGaucheData}
                     ></Gauche>
-                  <Droit 
-                   choix={choixDroit}
-                   listeArticle={listeArticle}
-                   setIdArticle={setIdselectArticle}
-                   choixDroitPF={choixDroitPF}
-                   setChoixDRoit={setChoixDroit}
-                   updata={updata}
-                   fModificationValuePrix={modificationPrixinividuelle}
-                   reload={reload}
-                  >
-                  </Droit>
+                    <Droit 
+                      choix={choixDroit}
+                      listeArticle={listeArticle}
+                      setIdArticle={setIdselectArticle}
+                      choixDroitPF={choixDroitPF}
+                      setChoixDRoit={setChoixDroit}
+                      updata={updata}
+                      fModificationValuePrix={modificationPrixinividuelle}
+                      reload={reload}
+                      listfournisseur={listefournisseur}
+                      setIdFournisseur={setIdfournisseur}
+                      submit={submitFournisseur}
+                      setChoixGaucheData={setChoixGaucheData}
+                    >
+                    </Droit>
                 </div>
             </div>
         </>

@@ -17,6 +17,7 @@ export default function Recherche({listArticle,setIdArticle,choixDroitPF}){
         e.preventDefault();
         setIdArticle(value);
     };
+    
     const reinitialisation = async (e) => {
         e.preventDefault();
         window.location.reload();
@@ -28,7 +29,7 @@ export default function Recherche({listArticle,setIdArticle,choixDroitPF}){
                 <div class="card-body" >
                 <div class="row">
                     <div class="col-10">
-                        <p class="card-title ajout" style={styles.titreViollete}>Recherche Article</p>
+                        <p class="card-title ajout" style={styles.titreViollete}>Recherche</p>
                     </div>
                     <div class="col-2">
                         <a   class="nav-link" onClick={choixDroitPF} style={styles.titreViollete}>
@@ -39,7 +40,7 @@ export default function Recherche({listArticle,setIdArticle,choixDroitPF}){
                 <form onSubmit={doSearch} class="forms-sample">
                     
                     <div class="form-group">
-                        <label for="exampleSelectGender" style={styles.titreGris}>Gender</label>
+                        <label for="exampleSelectGender" style={styles.titreGris}>Article</label>
 
                         <Select  styles={styles.select}
                                     value={selectedOption}

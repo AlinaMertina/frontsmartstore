@@ -16,6 +16,10 @@ const styles = {
       color: '#4B49AC',
       fontWeight: 'bold',
     },
+    titreViolletef: {
+      color: '#4B49AC',
+      fontWeight: 'bold',
+    },
     titreGris: {
       color: '#6C7383',
       fontWeight: 'bold',
@@ -63,7 +67,10 @@ const styles = {
     theadTh:{
       position: 'sticky',
       Zindex:1,
-    }
+    },
+    overscrollnotif:{
+      overflowY: 'scroll', height: '50%',overflowX:'none',
+    },
   };
   
   export default styles;

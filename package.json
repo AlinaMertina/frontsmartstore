@@ -10,14 +10,22 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@stomp/stompjs": "^7.0.0",
     "@tauri-apps/api": "^1",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "browser-image-compression": "^2.0.2",
+    "date-fns": "^3.6.0",
+    "global": "^4.4.0",
+    "node-polyfill-webpack-plugin": "^4.0.0",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "react-select": "^5.8.0"
+    "react-select": "^5.8.0",
+    "react-toastify": "^10.0.5",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "sockjs-client": "^1.6.1"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1",

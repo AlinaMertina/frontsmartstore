@@ -2,7 +2,7 @@ import React,{useEffect, useRef,useState}  from 'react';
 import styles from '../../../../../../datajson/style/style';
 import config from '../../../../../../config/config';
 import axios from 'axios';
-export default function Modification({data,fModificationValuePrix,choixDroitPF,reload}){
+export default function Modification({data,fModificationValuePrix,choixDroitPF,reload,setChoixGaucheData}){
     const [value, setValue] = useState(data);
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -16,7 +16,8 @@ export default function Modification({data,fModificationValuePrix,choixDroitPF,r
         .then(response => {
           const responseData = response.data;
           if(responseData.data!=null){
-            window.location.reload();
+            // window.location.reload();
+            setChoixGaucheData(1);
           }else{
             console.log(responseData.error);
           }

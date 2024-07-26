@@ -20,12 +20,13 @@ import { useParams } from 'react-router-dom';
 
 export default function PrixArticle(){
     const { id } = useParams();
+    
     return(
         <>
          <div class="body"  >
          <div class="row">
                 <div class="col-2 nav ">
-                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin.navverticale.Article}></SidebarVerticale>
+                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin}></SidebarVerticale>
                 </div>
                 <PrixArticles  idfournisseur={id}></PrixArticles>
             </div>

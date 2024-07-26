@@ -14,20 +14,20 @@ import SidebarVerticale from '../../../../component/sidebarVerticale/SidebarVert
 import dataNavbar from '../../../../datajson/statique/dataNavbar';
 import notification from '../../../../datajson/dynamique/notification';
 import infouser from '../../../../datajson/dynamique/infouser';
-import Commandex from '../../../../component/newcss/fournisseur/commande/Commande';
+import PrixArticles from '../../../../component/newcss/fournisseur/prixarticle/PrixArticle';
 import logo from '../../../../datajson/statique/logo';
+import { useParams } from 'react-router-dom';
 
-export default function Commande(){
-    const formaData={code:'',nom:''};
-    const colonne=['code','nom'];
+export default function PrixArticle(){
+    const { id } = useParams();
     return(
         <>
          <div class="body"  >
          <div class="row">
                 <div class="col-2 nav ">
-                    <SidebarVerticale dataMenuVerticale={dataNavbar.admin.navverticale.Article}></SidebarVerticale>
+                    <SidebarVerticale dataMenuVerticale={dataNavbar.appprovisionnement}></SidebarVerticale>
                 </div>
-                <Commandex></Commandex>
+                <PrixArticles  idfournisseur={id}></PrixArticles>
             </div>
          </div>
            

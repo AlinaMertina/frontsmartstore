@@ -1,3 +1,6 @@
+import { formatDistanceToNow, parseISO } from 'date-fns';
+
+
 export default class StatiqueFonction{
     static capitalizeFirstLetter(string) {
         if (!string) return '';
@@ -126,6 +129,45 @@ export default class StatiqueFonction{
    return liste.filter((_, i) => i !== index);
   };
   
+  static choixcolonne = (listecolonne) => {
+      let newtable=[];
+      for(let i=0;i<listecolonne;i++){
+        if(i==index){
+          if(listecolonne[i].active==1){
+            newtable.push(listecolonne[i].nom);
+          }
+        }
+      }
+      return newtable;
+   };
+
+  static formatRelativeTime = (dateString) => {
+    const now = new Date();
+    const pastDate = new Date(dateString);
+    console.log(pastDate);
+    const diffInSeconds = Math.floor((now - pastDate) / 1000);
+    const secondsInMinute = 60;
+    const secondsInHour = 3600;
+    const secondsInDay = 86400;
   
-  
+    if (diffInSeconds < secondsInMinute) {
+      return `${diffInSeconds} s`;
+    } else if (diffInSeconds < secondsInHour) {
+      const minutes = Math.floor(diffInSeconds / secondsInMinute);
+      return `${minutes} min`;
+    } else if (diffInSeconds < secondsInDay) {
+      const hours = Math.floor(diffInSeconds / secondsInHour);
+      return `${hours} h`;
+    } else {
+      const days = Math.floor(diffInSeconds / secondsInDay);
+      return `${days} j`;
+    }
+  };
+  static formatNumber = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  };
+  // static formatRelativeTime = (dateString) => {
+  //   const pastDate = parseISO(dateString);
+  //   return formatDistanceToNow(pastDate, { addSuffix: true });
+  // };
 }

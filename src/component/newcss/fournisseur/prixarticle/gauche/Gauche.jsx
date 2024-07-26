@@ -3,7 +3,7 @@ import Header from '../../../crud(1,1)/simple/gauche/header/Header';
 import Table from './table/Table';
 import Ajout from './ajout/Table';
 export default function Gauche({listeprixFournisseur,modificationPrixinividuelle,
-updata,setUpdata,choixGauche,choixElementDroit,nomfournisseur,choixElementGauchePF}){
+updata,setUpdata,choixGauche,choixElementDroit,nomfournisseur,choixElementGauchePF,getData,setChoixGauche}){
     const neutre= async () => {
         
     };
@@ -19,7 +19,7 @@ updata,setUpdata,choixGauche,choixElementDroit,nomfournisseur,choixElementGauche
                 ></Table>;
             break;
         case 2:
-            content = <Ajout data={updata} setData={setUpdata}  nomfournisseur={nomfournisseur} choixElementGauchePF={choixElementGauchePF} ></Ajout>;
+            content = <Ajout data={updata} setData={setUpdata}  nomfournisseur={nomfournisseur} choixElementGauchePF={choixElementGauchePF} getData={getData} setChoixGauche={setChoixGauche} ></Ajout>;
             break;
         default:
             content = 
